@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from src.core.config import settings  # adjust the import path accordingly
 
-DATABASE_URL = "postgresql://myuser:Test123456@localhost:5432/mydb"
 
 engine = create_engine(
-    DATABASE_URL,
+    settings.DATABASE_URL,
     echo_pool=True,
     pool_size=10,
     max_overflow=0,
