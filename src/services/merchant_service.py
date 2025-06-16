@@ -23,6 +23,6 @@ class MerchantService:
         return encrypted_key
 
     def get_by_api_key(self, db: Session, raw_key: str):
-        decrypted_key = decrypt_api_key(raw_key)
-        hashed_key = hash_api_key(decrypted_key)
+        # decrypted_key = decrypt_api_key(raw_key)
+        hashed_key = hash_api_key(raw_key)
         return self.repo.get_by_api_key(db, hashed_key)

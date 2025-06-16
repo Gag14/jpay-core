@@ -21,3 +21,5 @@ class Balance(Base):
     __table_args__ = (
         UniqueConstraint('merchant_id', 'coin_symbol', 'network', name='unique_balance_per_coin'),
     )
+
+from src.models.coin import Coin

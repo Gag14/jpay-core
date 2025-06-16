@@ -10,9 +10,12 @@ class APIKeyAuthMiddleware(BaseHTTPMiddleware):
     def __init__(self, app):
         super().__init__(app)
         self.merchant_repo = MerchantRepository()
+        
+        
 
     async def dispatch(self, request: Request, call_next) -> Response:
-        open_routes = ["/docs", "/openapi.json", "/register"]
+        print(1)
+        open_routes = ["/docs", "/openapi.json", "/api/v1/core/merchants/register", "/api/v1/core/deposits/trigger-monitor", "/api/v1/test/webhook/test"]
         if request.url.path in open_routes:
             return await call_next(request)
 

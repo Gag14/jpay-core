@@ -19,3 +19,6 @@ class Coin(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     balances = relationship("Balance", back_populates="coin", cascade="all, delete-orphan")
+
+
+from src.models.balance import Balance

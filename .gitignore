@@ -59,3 +59,7 @@ dist/
 # Frontend (if added later)
 node_modules/
 dist/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
