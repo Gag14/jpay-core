@@ -3,7 +3,7 @@ from src.core.middleware.api_key_auth import APIKeyAuthMiddleware
 from src.models.enums.network_type import NetworkType
 from src.db.engine import engine
 from src.db.base import Base
-from src.models import merchant, balance, transaction, wallet, coin, fiat_currency
+from src.models import merchant, balance, transaction, wallet, coin, fiat_currency, admin_user
 from src.models.enums import transaction_status, wallet_type
 from src.routes.core import merchant, deposit, test
 from src.routes import admin, core

@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, Numeric, String, Boolean, DateTime
 from src.db.base import Base
-
+from src.models.wallet import Wallet
 class Merchant(Base):
     __tablename__ = "merchants"
 
@@ -14,7 +14,7 @@ class Merchant(Base):
     is_active = Column(Boolean, default=True)
     webhook_url = Column(String(500), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
-    wallets = relationship("Wallet", back_populates="merchant", cascade="all, delete-orphan")
     commission_rate = Column(Numeric(5, 4), default=0.00)  
     
+    wallets = relationship("Wallet", back_populates="merchant", cascade="all, delete-orphan")
     transactions = relationship("Transaction", back_populates="merchant", cascade="all, delete-orphan")

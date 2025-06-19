@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, Numeric, String, ForeignKey, DateTime, Boolean
 from src.db.base import Base
 from src.models.enums.wallet_type import WalletType, wallet_type_db
-
+from src.models.transaction import Transaction
 class Wallet(Base):
     __tablename__ = "wallets"
 
